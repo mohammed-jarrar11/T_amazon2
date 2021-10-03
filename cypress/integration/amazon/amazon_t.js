@@ -4,7 +4,7 @@ describe('Test amazon', function () {
         cy.visit(url)
         cy.contains('Sign in').click()
         cy.url().should('include', 'signin')
-       // cy.get('input[type="email"]').type('jarrarmhmd0@gmail.com')
+        cy.wait(3000)
         cy.get('input[type="email"]').type('test.jarrar2022@gmail.com')
         cy.get('input[id="continue"]').click()
         cy.contains("Password", { timeout: 10000 }).should('be.visible')
@@ -17,7 +17,6 @@ describe('Test amazon', function () {
         cy.contains("samsung s20", { timeout: 10000 }).should('be.visible')
         cy.get('img[data-image-index="1"]').click()
         cy.wait(3000)
-        
         cy.url().should('include', 'sr_1_1')
         cy.wait(3000)
         cy.get('input[id="add-to-cart-button"]', { timeout: 10000 }).click()
